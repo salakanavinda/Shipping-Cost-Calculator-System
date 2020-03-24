@@ -1,0 +1,83 @@
+<div class="row col-12 clearfix visible-xs container">
+    <!-- <div class="col-4 justify-content-center">
+        <button (click)="resetCalc()" class="btn btn-info btn-reset">Reset</button>
+    </div> -->
+
+    <!-- FORM Details Enter -->
+    <form class="col col-12 justify-content-center clearfix visible-xs" id="calcForm">
+
+        <!-- Method -->
+        <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx">
+            <label for="methodSelect">Select Shipping Method</label>
+            <select class="form-control thick-option" id="selectMethod" (change)="onMethodSelect($event.target.value)">
+              <option value=null>Select Shipping Method</option>
+              <option *ngFor="let method of methodList" value="{{method.id}}">{{method.type}}</option>
+            </select>
+        </div>
+
+        <!-- Item -->
+        <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx">
+          <label for="itemSelect" *ngIf="!itemError">Select Item</label>
+          <label class ="error-lable" for="itemSelect" *ngIf="itemError">Please Select Item</label>
+          <select  class="form-control thick-option" id="selectItem" (change)="onItemSelect($event.target.value)" [attr.disabled]="!itemCheck ? '' : null">
+            <option value=null>Select Item Type</option>
+            <option *ngFor="let item of itemList" value="{{item.id}}">{{item.type}}</option>
+          </select>
+        </div>
+
+          <!-- Weight -->
+          <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx">
+            <label for="weightSelect" id="weight-lbl" *ngIf="!weightEnter">Weight</label>
+            <label class ="error-lable" for="weightEnter" id="itemError" *ngIf="weightEnter">Enter Weight</label>
+            <input  type="number" id="weightInput" class="form-control thick-option" [attr.disabled]="!weightCheck ? '' : null" placeholder="Enter Weight {{gOrKg}}"
+              (keyup)="onWeightEnter($event)">
+          </div>
+
+          <!-- Country -->
+        <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx">
+          <label for="countrySelect" >Select Country</label>
+            <ngx-select-dropdown class="thick-option" id="selectCountry" [config]="config" [options]="countryList" [multiple]="false" (open)="resetCountrySelect()" (change)="bypassSelect($event)" [disabled]="!countryCheck"></ngx-select-dropdown>
+        </div>
+
+        <!-- Service Type -->
+        <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx" *ngIf="serviceCheck">
+          <label for="serviceSelect">Select Service</label>
+          <select class="form-control thick-option" id="selectService" (change)="onServiceSelect($event.target.value)">
+            <option value=null>Select a service...</option>
+            <option *ngFor="let service of serviceList" value="{{service.id}}">{{service.type}}</option>
+          </select>
+        </div>
+
+        <!-- Sub Service Type -->
+        <div class="form-group col-lg-12 col-md-12 col-xs-12 float-left form-bx" *ngIf="subServiceCheck && serviceCheck">
+          <label for="subServiceSelect">Select Insurance</label>
+          <select class="form-control thick-option" id="selectSubService" (change)="onSubServiceSelect($event.target.value)">
+            <option value=null>Select a insurance...</option>
+            <option *ngFor="let subService of subServiceList" value="{{subService.id}}">{{subService.type}}</option>
+          </select>
+        </div>
+    </form>
+
+    <!-- Quotation -->
+    <div class="row col-12 justify-content-center calc-container" *ngIf="quotation >= 0">
+      Cost : Rs. {{quotation | number : '1.2-2'}}
+    </div>
+    <!-- <div class="row col-12 justify-content-center calc-container" *ngIf="quotation == -1">
+      {{selectedCountry}} is not allowed
+    </div> -->
+    <div class="row col-12 justify-content-center calc-container-new" *ngIf="quotation == -2">
+      {{selectedCountry}} - Temporally EMS service suspended
+    </div>
+    <div class="row col-12 justify-content-center calc-container-new" *ngIf="quotation == -3">
+      Maximum weight accepted for {{selectedCountry}} is 20kg only
+    </div>
+    <div class="row col-12 justify-content-center calc-container" *ngIf="quotation == -4">
+      Free
+    </div>
+    <div class="row col-12 justify-content-center calc-container-new" *ngIf="quotation == -5">
+      Cost can be desided by the customer.
+    </div>
+    <div class="row col-12 justify-content-center calc-container-new" *ngIf="quotation == -6">
+      Maximum weight for this service is 30kg.
+    </div>
+</div>
