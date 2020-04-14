@@ -1,0 +1,100 @@
+@media screen and (min-width : 320px)
+{
+  .header{      
+    font-size: 4.5vw;
+  }
+}
+
+@media screen and (min-width : 576px)
+{
+  .header{      
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (min-width : 992px)
+{
+  .header{      
+    font-size: 1.1vw;
+  }
+}
+
+.header{
+    background: #0e0d39;
+    color: #eee; 
+    margin: 0px;
+    padding: 0px; 
+}
+
+.active{
+    background: red;
+}
+
+.img-top{
+    width: 400px;
+}
+
+.img-box{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+
+.logo{
+    width: 200px;
+}
+
+.box{   
+    /* border: #dcdcdc 1.5px solid;  */
+    height: 75px;    
+    padding-top: 10px;
+    padding-left: 8px;
+}
+
+.but-box{
+    text-align: center;
+    bottom: 20px;
+    padding-top: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.active:hover{
+    background: #920000;
+}
+
+.inactive:hover{
+    background: #020529;
+}
+
+.bound{
+    /* margin-top: 5px; */
+}
+
+.bound-box{
+    padding:10px;
+    background: #0b097b;
+    border: solid 2px #7c7ac7;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.bound-box:hover{
+    background: #060a3d;
+}
+
+.visit-link{
+    text-decoration: none;
+    color: #eee;
+}
+
+.visit-link:focus,
+.visit-link:active,
+.visit-link:hover{
+    text-transform: none;
+    text-decoration: none;    
+    color: #eee;
+}
+

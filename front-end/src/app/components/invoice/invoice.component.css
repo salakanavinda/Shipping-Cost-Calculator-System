@@ -1,0 +1,37 @@
+.container{
+    margin-top: 10px;
+    background: #0e0d39;
+    padding-bottom: 2.0vw;
+}
+
+.calc-container{
+    margin-top: 20px;
+    font-size: 35px;
+    color: #eee;
+    font-weight: 400;
+}
+
+.calc-container-new{
+    margin-left: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    color: #eee;
+    font-weight: 300;
+}
+
+.btn-reset{
+    margin-top: 10px;
+}
+
+.error-lable{
+    color: red;
+    font-weight: 600;
+}
+
+.custom{
+    width: 150px;
+}
+
+.thick-option{
+    height: 40px !important;
+}

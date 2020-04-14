@@ -1,0 +1,15 @@
+.main-view{
+    background: #0e0d39;
+    color: #eee;
+}
+
+.details{
+    height: 480px;
+    padding-top: 15vh;
+    padding-left: 5.5vw;
+}
+
+.invoice{
+    height: 480px;
+    overflow: auto;
+}

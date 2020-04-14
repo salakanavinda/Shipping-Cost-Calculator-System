@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+body{
+    background: #0e0d39;
+}
+
+.ngx-dropdown-container .ngx-dropdown-button{
+    height: 40px !important;
+    border-radius: 1.10rem !important;
+}
+
+.form-control{
+    border-radius: 1.10rem !important;
+}
+
+.form-bx{
+    /* width: 100%; */
+}
+
+label{
+    margin-bottom: 2px !important;
+}
+
+.form-group{
+    margin-bottom: 5px !important;
+}
+
+.ngx-dropdown-container button .nsdicon-angle-down{
+    visibility: hidden !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(154, 155, 156); 
+    border-radius: 10px;
+}
